@@ -217,3 +217,62 @@ jQuery(document).ready(function($) {
 	searchShow();
 
 });
+
+// ======================== Age verification =======================
+function createCookie(name, value, days) {
+
+	var expires = "";
+
+	if (days) {
+
+		 var date = new Date();
+
+		 date.setTime(date.getTime() + (1 * 24 * 60 * 60 * 1000));
+
+		 console.log(date);
+
+		 expires = "; expires=" + date.toUTCString();
+
+	}
+
+	document.cookie = name + "=" + value + expires + "; path=/"; // affects all site pages
+
+}
+
+function readCookie(name) {
+
+	var nameEQ = name + "=";
+
+	var ca = document.cookie.split(';');
+
+	for (var i = 0; i < ca.length; i++) {
+
+		 var c = ca[i];
+
+		 while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+
+		 if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+
+		 }
+
+	return null;
+
+}
+
+
+//  ============= jQuery =================
+if (readCookie('silverbranch_age_check') === 'true') {
+
+} else {
+
+     $('#sb-age-bg').show();
+
+}
+
+$('.close-age-popup').click(function() {
+
+     createCookie('silverbranch_age_check', 'true', 1);
+
+     $('.silverbranch-age-bg').hide();
+
+});
