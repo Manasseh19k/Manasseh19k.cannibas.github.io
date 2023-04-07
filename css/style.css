@@ -118,7 +118,7 @@ a {
     .site-footer ul li a {
       color: #eef0f4; }
       .site-footer ul li a:hover {
-        color: #0d8130; }
+        color: rgb(234, 170, 9); }
   .site-footer .footer-heading {
     font-size: 1.2rem;
     color: #f7f3f3;
@@ -1097,11 +1097,15 @@ a {
 .card{
   /* width: 220px; */
   display: flex;
+  transform: scale(1.1);
   /* align-items: center;
   justify-content: center; */
   /* padding: 10px 25px; */
   /* position: relative; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card-img-top:hover{
+  transform: scale(1);
 }
 
 /* ================ end of cards ================= */
